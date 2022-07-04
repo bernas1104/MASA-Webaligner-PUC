@@ -1,0 +1,33 @@
+{
+  "name": "masa-webaligner-puc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "commitlint.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernas1104/MASA-Webaligner-PUC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernas1104/MASA-Webaligner-PUC/issues"
+  },
+  "homepage": "https://github.com/bernas1104/MASA-Webaligner-PUC#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
