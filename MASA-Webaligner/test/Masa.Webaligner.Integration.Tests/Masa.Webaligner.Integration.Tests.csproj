@@ -21,4 +21,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Core\Masa.Webaligner.Core.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Infrastructure\Masa.Webaligner.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Application\Masa.Webaligner.Application.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.API\Masa.Webaligner.API.csproj" />
+    <ProjectReference Include="..\Masa.Webaligner.Shared\Masa.Webaligner.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

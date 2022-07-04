@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Masa.Webaligner.API\Masa.Webaligner.API.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Application\Masa.Webaligner.Application.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Infrastructure\Masa.Webaligner.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Masa.Webaligner.Core\Masa.Webaligner.Core.csproj" />
+    <InternalsVisibleTo Include="Masa.Webaligner.Integration.Tests" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

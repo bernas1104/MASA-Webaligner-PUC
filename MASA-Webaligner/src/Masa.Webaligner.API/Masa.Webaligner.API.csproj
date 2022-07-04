@@ -10,4 +10,16 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Masa.Webaligner.Application\Masa.Webaligner.Application.csproj" />
+    <ProjectReference Include="..\Masa.Webaligner.Infrastructure\Masa.Webaligner.Infrastructure.csproj" />
+    <ProjectReference Include="..\Masa.Webaligner.Core\Masa.Webaligner.Core.csproj" />
+    <InternalsVisibleTo Include="Masa.Webaligner.Shared" />
+    <InternalsVisibleTo Include="Masa.Webaligner.Integration.Tests" />
+  </ItemGroup>
+
+  <Target Name="InstallNpm" BeforeTargets="_GenerateRestoreProjectSpec">
+    <Exec Command="npm install" ConsoleToMsBuild="true" />
+  </Target>
+
 </Project>

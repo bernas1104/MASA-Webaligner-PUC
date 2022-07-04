@@ -3,6 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6BA73BF7-D212-4914-A793-975579C1057D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.API", "src\Masa.Webaligner.API\Masa.Webaligner.API.csproj", "{8A8CB963-0A19-4847-AFB6-284A24BA23CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.Application", "src\Masa.Webaligner.Application\Masa.Webaligner.Application.csproj", "{E196EE5E-17D6-4C1B-BC01-B8412454AF3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.Infrastructure", "src\Masa.Webaligner.Infrastructure\Masa.Webaligner.Infrastructure.csproj", "{93B2E014-5349-44B3-A402-F055E7702AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.Core", "src\Masa.Webaligner.Core\Masa.Webaligner.Core.csproj", "{B675C473-06E6-4E3F-BFC8-9D189D619345}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6C9F792-9229-4BC2-ABC4-543C08293C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.Unit.Tests", "test\Masa.Webaligner.Unit.Tests\Masa.Webaligner.Unit.Tests.csproj", "{C78D1985-148E-4507-8693-B43DDCE543E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masa.Webaligner.Integration.Tests", "test\Masa.Webaligner.Integration.Tests\Masa.Webaligner.Integration.Tests.csproj", "{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +26,39 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A8CB963-0A19-4847-AFB6-284A24BA23CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8CB963-0A19-4847-AFB6-284A24BA23CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8CB963-0A19-4847-AFB6-284A24BA23CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8CB963-0A19-4847-AFB6-284A24BA23CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E196EE5E-17D6-4C1B-BC01-B8412454AF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E196EE5E-17D6-4C1B-BC01-B8412454AF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E196EE5E-17D6-4C1B-BC01-B8412454AF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E196EE5E-17D6-4C1B-BC01-B8412454AF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B2E014-5349-44B3-A402-F055E7702AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B2E014-5349-44B3-A402-F055E7702AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B2E014-5349-44B3-A402-F055E7702AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B2E014-5349-44B3-A402-F055E7702AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B675C473-06E6-4E3F-BFC8-9D189D619345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B675C473-06E6-4E3F-BFC8-9D189D619345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B675C473-06E6-4E3F-BFC8-9D189D619345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B675C473-06E6-4E3F-BFC8-9D189D619345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78D1985-148E-4507-8693-B43DDCE543E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78D1985-148E-4507-8693-B43DDCE543E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78D1985-148E-4507-8693-B43DDCE543E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78D1985-148E-4507-8693-B43DDCE543E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A8CB963-0A19-4847-AFB6-284A24BA23CE} = {6BA73BF7-D212-4914-A793-975579C1057D}
+		{E196EE5E-17D6-4C1B-BC01-B8412454AF3A} = {6BA73BF7-D212-4914-A793-975579C1057D}
+		{93B2E014-5349-44B3-A402-F055E7702AF7} = {6BA73BF7-D212-4914-A793-975579C1057D}
+		{B675C473-06E6-4E3F-BFC8-9D189D619345} = {6BA73BF7-D212-4914-A793-975579C1057D}
+		{C78D1985-148E-4507-8693-B43DDCE543E9} = {D6C9F792-9229-4BC2-ABC4-543C08293C33}
+		{4EB6A097-9970-430A-AAEB-8F5BDDC4AF1D} = {D6C9F792-9229-4BC2-ABC4-543C08293C33}
 	EndGlobalSection
 EndGlobal
