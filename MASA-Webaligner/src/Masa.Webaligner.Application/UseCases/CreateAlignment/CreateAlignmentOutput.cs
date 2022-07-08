@@ -57,7 +57,7 @@ namespace Masa.Webaligner.Application.UseCases.CreateAlignment
         /// </summary>
         /// <param name="entity">Dados do alinhamento NCBI criado.</param>
         /// <returns>Dados do alinhamento criado.</returns>
-        public static CreateAlignmentOutput FromEntity(NcbiAlignment entity)
+        public static CreateAlignmentOutput FromEntity(Alignment entity)
         {
             return new CreateAlignmentOutput(
                 entity.Id.ToString(),

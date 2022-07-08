@@ -30,10 +30,19 @@ namespace Masa.Webaligner.Application.UseCases.CreateAlignment
         /// <param name="input">Dados do alinhamento requisitado.</param>
         /// <returns>Dados do alinhamento criado.</returns>
         public Task<CreateAlignmentOutput?> Execute(
-            CreateNcbiAlignmentInput input
+            BaseCreateAlignmentInput input
         )
         {
-            throw new NotImplementedException();
+            var ncbiAlignmentInput = (CreateNcbiAlignmentInput)input;
+
+            var ncbiAlignment = ncbiAlignmentInput.ToEntity();
+
+            _repository.Add(ncbiAlignment);
+            _unitOfWork.Commit();
+
+            return Task.FromResult(
+                CreateAlignmentOutput.FromEntity(ncbiAlignment)
+            )!;
         }
     }
 }

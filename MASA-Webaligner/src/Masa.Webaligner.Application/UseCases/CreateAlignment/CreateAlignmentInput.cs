@@ -66,14 +66,11 @@ namespace Masa.Webaligner.Application.UseCases.CreateAlignment
         public Alignment ToEntity()
         {
             return new NcbiAlignment(
-                null,
                 new User(null, Email!, FirstName!, LastName),
                 OnlyStageI,
                 AlignmentStatus.Requested,
                 FirstSequenceName!,
-                SecondSequenceName!,
-                null,
-                null
+                SecondSequenceName!
             );
         }
     }

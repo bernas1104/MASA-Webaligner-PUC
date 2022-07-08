@@ -1,4 +1,5 @@
 using Masa.Webaligner.Core.Enums;
+using Masa.Webaligner.Core.Events;
 
 namespace Masa.Webaligner.Core.Entities
 {
@@ -15,18 +16,20 @@ namespace Masa.Webaligner.Core.Entities
         #pragma warning restore CS8618
 
         public NcbiAlignment(
-            Guid? id,
-            User user,
-            bool onlyStageI,
-            AlignmentStatus alignmentStatus,
-            string firstSequenceName,
-            string secondSequenceName,
-            DateTime? createdAt,
-            DateTime? updatedAt
-        ) : base(id, user, onlyStageI, alignmentStatus, createdAt, updatedAt)
+            User user, bool onlyStageI, AlignmentStatus alignmentStatus,
+            string firstSequenceName, string secondSequenceName
+        ) : base(user, onlyStageI, alignmentStatus)
         {
             FirstSequenceName = firstSequenceName;
             SecondSequenceName = secondSequenceName;
+
+            AddEvent(
+                new NcbiAlignmentRequested(
+                    Id, OnlyStageI,
+                    FirstSequenceName,
+                    SecondSequenceName
+                )
+            );
         }
     }
 }

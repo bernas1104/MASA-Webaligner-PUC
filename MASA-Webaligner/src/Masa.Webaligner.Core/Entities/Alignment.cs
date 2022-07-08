@@ -9,6 +9,7 @@ namespace Masa.Webaligner.Core.Entities
         public AlignmentStatus Status { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
+        public string? CancellationReason { get; private set; }
 
         #pragma warning disable CS8618
         protected Alignment()
@@ -18,20 +19,38 @@ namespace Masa.Webaligner.Core.Entities
         #pragma warning restore CS8618
 
         protected Alignment(
-            Guid? id,
-            User user,
-            bool onlyStageI,
-            AlignmentStatus status,
-            DateTime? createdAt,
-            DateTime? updatedAt
+            User user, bool onlyStageI,
+            AlignmentStatus status
         )
         {
-            Id = id ?? Guid.NewGuid();
+            Id = Guid.NewGuid();
             User = user;
             OnlyStageI = onlyStageI;
             Status = status;
-            CreatedAt = createdAt ?? DateTime.Now;
-            UpdatedAt = updatedAt ?? CreatedAt;
+            CancellationReason = default;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = CreatedAt;
+        }
+
+        public void SetAsWaitingSequences()
+        {
+            Status = AlignmentStatus.WaitingSequences;
+        }
+
+        public void SetAsInProcess()
+        {
+            Status = AlignmentStatus.InProcess;
+        }
+
+        public void SetAsFinished()
+        {
+            Status = AlignmentStatus.Finished;
+        }
+
+        public void SetAsCancelled(string cancellationReason)
+        {
+            Status = AlignmentStatus.Cancelled;
+            CancellationReason = cancellationReason;
         }
     }
 }
