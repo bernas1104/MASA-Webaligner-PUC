@@ -38,14 +38,11 @@ namespace Masa.Webaligner.Shared.Applications
                         f.Person.LastName
                     );
                     var alignment = new NcbiAlignment(
-                        null,
                         user,
                         f.Random.Bool(),
                         AlignmentStatus.Requested,
                         "MT126808.1",
-                        "NC_045512.2",
-                        null,
-                        null
+                        "NC_045512.2"
                     );
 
                     return CreateAlignmentOutput.FromEntity(alignment);
