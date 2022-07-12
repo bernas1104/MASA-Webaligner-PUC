@@ -1,3 +1,4 @@
+using Masa.Webaligner.Application.Services;
 using Masa.Webaligner.Application.UseCases.CreateAlignment;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,6 +20,7 @@ namespace Masa.Webaligner.Application
             this IServiceCollection services
         )
         {
+            services.AddHostedService<AlignmentUpdateConsumer>();
             services.AddScoped<ICreateNcbiAlignmentUseCase, CreateNcbiAlignmentUseCase>();
 
             return services;

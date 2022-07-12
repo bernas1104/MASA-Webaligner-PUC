@@ -2,6 +2,7 @@ using System.Reflection;
 using FluentValidation.AspNetCore;
 using Masa.Webaligner.API.Filters;
 using Masa.Webaligner.API.Middlewares;
+using Masa.Webaligner.Infrastructure.Options;
 using Masa.Webaligner.Application;
 using Masa.Webaligner.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,20 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<InfrastructureOptions>(
+    builder.Configuration.GetSection("InfrastructureOptions")
+);
+
+var infrastructureOptions = new InfrastructureOptions();
+builder.Configuration.Bind("InfrastructureOptions", infrastructureOptions);
+
 builder.Services
     .AddApplication()
-    .AddInfrastructure(builder.Environment.IsDevelopment());
+    .AddInfrastructure(
+        builder.Configuration.GetConnectionString("MasaDatabase"),
+        infrastructureOptions,
+        builder.Environment.IsDevelopment()
+    );
 
 builder.Services.Configure<ApiBehaviorOptions>(opt => {
     opt.SuppressModelStateInvalidFilter = true;
