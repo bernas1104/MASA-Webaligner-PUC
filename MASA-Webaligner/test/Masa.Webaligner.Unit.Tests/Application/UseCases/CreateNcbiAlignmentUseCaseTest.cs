@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Masa.Webaligner.Application.UseCases.CreateAlignment;
 using Masa.Webaligner.Core.Entities;
+using Masa.Webaligner.Core.Interfaces.Events;
 using Masa.Webaligner.Core.Interfaces.Repositories;
 using Masa.Webaligner.Shared.Applications;
 using Moq;
@@ -16,7 +17,8 @@ namespace Masa.Webaligner.Unit.Tests.Application.UseCases
         {
             _useCase = new CreateNcbiAlignmentUseCase(
                 _repository.Object,
-                _unitOfWork.Object
+                _unitOfWork.Object,
+                _eventProcessor.Object
             );
         }
 
@@ -37,13 +39,19 @@ namespace Masa.Webaligner.Unit.Tests.Application.UseCases
         }
 
         [Fact]
-        public void CreateNcbiAlignmentUseCase_Should_Publish_Alignment_Request_Event()
+        public async void CreateNcbiAlignmentUseCase_Should_Publish_Alignment_Request_Event()
         {
             // Arrange
+            var input = CreateAlignmentsMock.CreateNcbiAlignmentInputFaker;
 
             // Act
+            var output = await _useCase.Execute(input);
 
             // Assert
+            _eventProcessor.Verify(
+                x => x.Process(It.IsAny<IEnumerable<IDomainEvent>>()),
+                Times.Once
+            );
         }
     }
 }
